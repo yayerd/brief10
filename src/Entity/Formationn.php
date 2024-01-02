@@ -2,16 +2,26 @@
 
 namespace App\Entity;
 
-use App\Repository\FormationnRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
+use ApiPlatform\Metadata\Get;
 use Doctrine\ORM\Mapping as ORM;
+use ApiPlatform\Metadata\ApiResource;
+use App\Controller\FormationController;
+use App\Repository\FormationnRepository;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\Serializer\Annotation\Groups;
 use Symfony\Component\Validator\Constraints as Assert;
 
 
 
 #[ORM\Entity(repositoryClass: FormationnRepository::class)]
+#[ApiResource(
+    new Get(
+        name: 'ListFormation',
+        uriTemplate: '/formations/list',
+        controller: FormationController::class . '::index'
+    )
+)]
 class Formationn
 {
     #[ORM\Id]

@@ -7,7 +7,6 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
 use ApiPlatform\Metadata\ApiResource;
 use Symfony\Component\Validator\Constraints as Assert;
-
 #[ApiResource]
 #[ORM\Entity(repositoryClass: CandidatureRepository::class)]
 class Candidature

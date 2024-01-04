@@ -15,13 +15,15 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 
 #[ORM\Entity(repositoryClass: FormationnRepository::class)]
-#[ApiResource(
-    new Get(
-        name: 'ListFormation',
-        uriTemplate: '/formations/list',
-        controller: FormationController::class . '::index'
-    )
-)]
+#[ApiResource
+// (
+//     new Get(
+//         name: 'ListFormation',
+//         uriTemplate: '/formations/list',
+//         controller: FormationController::class . '::index'
+//     )
+// )
+]
 class Formationn
 {
     #[ORM\Id]

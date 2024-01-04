@@ -39,9 +39,9 @@ class CandidatureController extends AbstractController
     }
    
 
-    #[Route('/api/candidature/update/{id}', name:"updateCandidature", methods:['PUT'])]
+    #[Route('/api/candidature/update/{id}', name:"refuseCandidature", methods:['PUT'])]
 
-    public function updateOneCandidature(Request $request, SerializerInterface $serializer, Candidature $currentCandidature, 
+    public function RefuseCandidature(Request $request, SerializerInterface $serializer, Candidature $currentCandidature, 
                                  EntityManagerInterface $entityManager, ): JsonResponse 
     {
         $updatedCandidature = $serializer->deserialize($request->getContent(), 
